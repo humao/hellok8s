@@ -14,9 +14,9 @@ RUN mkdir /app
 
 WORKDIR /app
 
-COPY target/polls-0.0.1-SNAPSHOT.jar /app/polls.jar
+COPY target/demo-0.0.1-SNAPSHOT.jar /app/demo.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar","/app/polls.jar"]
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar","/app/demo.jar"]
 
