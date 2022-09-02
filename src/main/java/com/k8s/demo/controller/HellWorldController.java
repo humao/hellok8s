@@ -27,6 +27,6 @@ public class HellWorldController {
         }
 
 
-        return "hello kubernates~~~,"+ ip.toString();
+        return "hello kubernates~~,"+ ip.toString();
     }
 }
