@@ -10,12 +10,10 @@ node('jenkins-jenkins-agent') {
     stage("git package"){
 
         sh '''
-
              mvn clean package -Dmaven.test.skip=true
              echo "Build Image sh build_tag=${BUILD_TAG}-${BUILD_NUMBER}"
              docker build -t hunannan/hello-k8s:${BUILD_TAG}-${BUILD_NUMBER} .
            '''
-
     }
 
     stage('push image'){
@@ -46,18 +44,9 @@ node('jenkins-jenkins-agent') {
               --set image.tag=${BUILD_TAG}-${BUILD_NUMBER} hellok8s-chart
         fi
 
-
-
-
          echo "Helm 部署应用成功..."
 
        """
 
-    }
-    stage('test') {
-        sh 'echo "===================="'
-        sh 'docker --version'
-        sh 'docker images'
-        sh 'kubectl get pod -n jenkins'
     }
 }
